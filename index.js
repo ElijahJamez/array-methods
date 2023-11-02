@@ -13,17 +13,39 @@ const cart = [];
 
 // ------------------ Complete the functions written below ------------------------------ //
 
+
+
 function logItemNames() {
-  //TODO: use the .forEach() method to log out the name of each item
+//-------------------------log out the name of each item-----------------------------------//
+
+   items.forEach(nameOfPat => console.log(nameOfPat.name));            // `.name` adresses the name key's values 
+//  ^^old name       ^^new name               ^^new name again for some reason  
 }
+
+
+
+
+
+
 
 /**
  * @param {number} id
  * @returns {{id: number, name: string, price: number, category: string, inventory: number}} item
  */
 function findItemById(id) {
-  // TODO: Use the .find() method to return the item who's id matches the passed in id
+  // TODO: Use the .find() method to RETURN the item who's id matches the passed in id
+   return items.find (missingThis => missingThis.id === id );
+// i have no idea if ive done this right LOL - 
+// i feel like it should just say `apple` but it tells me about the entire object???
 }
+
+
+
+
+
+
+
+
 
 /**
  * @returns {items[]} Returns a new array with capitalized names
@@ -31,7 +53,19 @@ function findItemById(id) {
 function capitalizeNames() {
   // TODO:  Use the .map() and possibly .slice() methods and return a new items array with the item names capitalized
   // DO NOT MUTATE THE ORIGINAL ARRAY IN YOU LOGIC
+return items.map ((item) => item.name.slice(0,))
+
+
+//  i dont really understand `.map` 
+//  had to get help with this one so i cant exactly explaoin the syntax
+//  defintiely couldnt figure put the `.slice` part - it was behaving funny 
+//  and i dont know to the syntax to make it work with `.toUpperCase`
 }
+
+
+
+
+
 
 /**
  * @returns {number} the sum of all inventory items
@@ -39,6 +73,10 @@ function capitalizeNames() {
 
 function calculateTotalInventory() {
   // TODO Use the .reduce() method to return the total number of items in inventory
+return items.reduce(accumulator, currentValue) => 
+
+// i couldnt figure out how to the syntax for applying it to a return....
+
 }
 
 /**
@@ -48,13 +86,22 @@ function calculateAllInventoryPrice() {
   // TODO Use the .reduce() method to return the total price of all the items in inventory
 }
 
+
+
+
 /**
  * @param {string} name
  * @returns {number} the price of the item passed in
  */
 function getItemPriceByName(name) {
   // TODO: Use your knowledge of objects and arrays to get the price of the item passed in
+
 }
+
+
+
+
+
 
 /**
  * @param {categoryId} id of category to find
@@ -130,3 +177,5 @@ console.log(
   `The total price of the items in your cart is: `,
   calculateTotalCartPrice()
 );
+
+
